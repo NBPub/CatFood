@@ -1,25 +1,26 @@
 # CatFood Overview
 
-This is a rudimentary Python script designed to process a few ingredient lists and compare them in an HTML document.
+Rudimentary Python script designed to process a few ingredient lists and compare them in an HTML document.
 
 ### Requirements
 
 [Jinja](https://jinja.palletsprojects.com/)
+
 [Python](https://www.python.org/)
 
 # Process
 
   1. Copy source information into list
   2. Iterate through list to generate `Food` objects
-  3. Present each unique ingredient and categorize, note terms to clean/rename
-  4. Categorize `Food` ingredients
-  5. Find unique ingredients for each category (ex: Food A has blueberries in "Plants", no others do)
+  3. Categorize each unique ingredient, note terms to clean/rename
+  4. Add `Food` ingredients to respective category
+  5. Find unique ingredients for each category *ex: Food A has blueberries in "Plants", no others do*
   6. Generate HTML page with **Jinja2** template
   7. Compare formulations!
   
 ## Source Information
 
-Information was manually copied from an online retailer. See [text document](/source_info.txt).
+Information was manually copied from an online retailer. See [text file](https://raw.githubusercontent.com/NBPub/CatFood/main/source_info.txt).
 
 ## Cleaning
 
@@ -35,7 +36,7 @@ Category lists were populated as the cleaning steps were developed.
 Therefore, the lists in the script contain more terms than will be necessary.
 
 The `adjusters` list was used to capture the parsed ingredients to be cleaned, and to determine cleaning methods.
-The following illustrates how the lists were populated:
+The following illustrates how the lists were populated :
 
 ```python
 for val in data.values():
@@ -68,6 +69,7 @@ for val in data.values():
         print('\n\n')
 ```
 
+*not shown in [source code](/catfood.py)*
 
 ## Re-Naming
 
@@ -88,7 +90,9 @@ was not meant to provide accurate description of each ingredient.
 ## HTML Generation
 
 The processed data was passed through Jinja2 to an HTML [template](/templates/catfood.html), and saved. 
-See the [output here](/example.html). Unique ingredients for each category were highlighted. The top row was stickied.
+See the [output here](https://raw.githubusercontent.com/NBPub/CatFood/main/example.html). Unique ingredients for each category were highlighted. The top row was stickied.
+
+[Bootstrap](https://getbootstrap.com/docs/) was used to minimize need for CSS styling.
 
 **Page Layout**
 
@@ -99,4 +103,3 @@ See the [output here](/example.html). Unique ingredients for each category were 
 | Vitamins | *alphabetized list* | *...* | *...* |
 | Nutrients | *list+wiki links* | *...* | *...* |
 | Others | *alphabetized list* | *...* | *...* |
-
