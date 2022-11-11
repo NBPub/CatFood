@@ -1,9 +1,7 @@
-# from flask import Flask, render_template
-
-# app = Flask(__name__)
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from pathlib import Path
-env = Environment( # Jinja environment
+# Jinja environment
+env = Environment( 
     loader=FileSystemLoader("templates"),
     autoescape=select_autoescape()
 )
@@ -49,7 +47,8 @@ renames = {'duck by-product meal':'duck meal', 'de-boned duck':'duck', 'deboned 
 adjust_list = ['vitamins [', 'trace minerals [', 'preserved with ', 'minerals (', 'vitamins (']
 chop_list = [' (preserved with mixed tocopherols)', '.', ']', ' (omega 3 fatty acids)', ' (omega 6 fatty acids)']
 
-class Food: # Food class for processing information
+# Food class for processing information
+class Food:
     def __init__(self, name, price, ingredients):
         self.name = name
         self.price = price.split('/')
@@ -186,44 +185,3 @@ template = env.get_template('catfood.html')
 favi = str(Path(Path.cwd(), 'static', 'favicon.png'))
 with open(Path('test.html'), 'w', encoding='utf-8') as page:
     page.write(template.render(data=data, favi=favi))                   
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
