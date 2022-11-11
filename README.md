@@ -10,12 +10,12 @@ Rudimentary Python script designed to process a few ingredient lists and compare
 
 # Process
 
-  1. Copy source information into [list](/catfood.py#L12)
-  2. [Iterate](/catfood.py#L157) through list to generate `Food` objects
+  1. Copy source information into [list](/catfood.py#L10)
+  2. [Iterate](/catfood.py#L156) through list to generate `Food` objects
   3. Categorize each unique ingredient, note terms to clean/rename
   4. Add `Food` ingredients to respective category
-  5. Find [unique](/catfood.py#L166) ingredients for each category *ex: Food A has blueberries in "Plants", no others do*
-  6. [Generate](/catfood.py#L184) HTML page with **Jinja2** template
+  5. Find [unique](/catfood.py#L165) ingredients for each category *ex: Food A has blueberries in "Plants", no others do*
+  6. [Generate](/catfood.py#L183) HTML page with **Jinja2** template
   7. Compare formulations!
   
 ## Source Information
@@ -33,7 +33,7 @@ Regex could have been a cleaner option to process the ingredient lists.
 ## Categorization
 
 Category lists were populated as the cleaning steps were developed. 
-Therefore, the [lists](/catfood.py#L31) in the script contain more terms than will be necessary.
+Therefore, the [lists](/catfood.py#L29) in the script contain more terms than will be necessary.
 
 The `adjusters` list was used to capture the parsed ingredients to be cleaned, and to determine cleaning methods.
 The following illustrates how the lists were populated :
@@ -74,7 +74,7 @@ for val in data.values():
 ## Re-Naming
 
 Some ingredients were renamed to consolidate related items, such as "de-boned duck" and "deboned duck" to "duck".
-*See [translations](/catfood.py#L38).*
+*See [translations](/catfood.py#L36).*
 
 All vitamin supplements and sources were renamed to their `Vitamin X` name, and added to their own category.
 
