@@ -90,7 +90,7 @@ was not meant to provide accurate description of each ingredient.
 ## HTML Generation
 
 The processed data was passed through Jinja2 to an HTML [template](/templates/catfood.html), and saved. 
-See the [output here](https://raw.githubusercontent.com/NBPub/CatFood/main/example.html). Unique ingredients for each category were highlighted. The top row was stickied.
+See the [output here](https://nbpub.github.io/CatFood/). Unique ingredients for each category were highlighted. The top row was stickied.
 
 [Bootstrap](https://getbootstrap.com/docs/) was used to minimize need for CSS styling.
 
